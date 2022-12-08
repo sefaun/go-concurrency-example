@@ -14,14 +14,13 @@ type ErrorResponse struct {
 }
 
 func main() {
-
 	request_response := make(chan string)
 
 	go createRequest(request_response)
 	// go createRequest2()
 
-	fmt.Println(<-request_response)
 	fmt.Println("İşlem Bitti")
+	fmt.Println(<-request_response)
 }
 
 func createRequest(channel chan string) {
